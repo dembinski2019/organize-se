@@ -1,0 +1,50 @@
+
+
+
+
+<PlanoDeEstudo>:
+    name: 'cadastroplano'
+    BoxLayout:
+        orientation:'vertical'
+        MDToolbar:
+            id:toolbar
+            title: 'Plano de Estudos'
+            pos_hint: {'top':1}
+            elevation:10
+    
+        
+        BoxLayout:
+            orientation:'vertical'
+            id: container
+            pos_hint: {'center_x':.5,'center_y':.5}
+            orientation: 'vertical'
+            
+            spacing: '30dp'
+            Widget:
+
+            
+            MDFlatButton:
+                increment_width: container.width
+                height:container.height/7
+                font_size: "16sp"
+                md_bg_color: 1, 1, 1, 0.1
+                pos_hint: {'center_x':.5}
+                text: "Plano Tradicional"
+                on_press:app.root.transicao('cadastrotradicional','left')
+            MDFlatButton:
+                increment_width: container.width
+                font_size: "16sp"
+                md_bg_color: 1, 1, 1, 0.1
+                height: container.height/7
+                pos_hint: {'center_x':.5,'center_y':.5}
+                text: "Ciclos De Estudo"
+            MDFlatButton:
+                increment_width: container.width
+                height: container.height/7
+                font_size: "16sp"
+                md_bg_color: 1, 1, 1, 0.1
+                pos_hint: {'center_x':.5,'center_y':.5}
+                text: "Personalizar"
+            Widget:
+          
+        

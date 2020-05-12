@@ -1,0 +1,131 @@
+<WhiteLabel@MDLabel>:
+    size_hint_y:None
+    height: self.texture_size[1]
+    theme_text_color:'Custom'
+    text_color: 1,1,1,1
+
+<ContenteNavigation@BoxLayout>:
+    orientation:'vertical'
+    size_hint_y:None
+    height: self.minimum_height
+    pos_hint:{'center_x':0.5, 'center_y':0.5}
+    padding:'20dp'
+    canvas.before:
+        Color:
+            rgba:1,1,1,.2
+        Rectangle:
+            pos:self.pos
+            size:self.size
+    
+    WhiteLabel:
+        text: 'Como Funciona?'
+        bold:True
+        
+    Widget:
+        size_hint_y:None
+        height:'10dp'
+    WhiteLabel:
+        text:'''Selecione um dia da semana, adicione suas matérias, o tempo que vai passar estudando cada.'''
+    Widget:
+        size_hint_y:None
+        height:'10dp'
+    WhiteLabel:
+        text: 'Metodo Tradicional'
+        bold:True
+    Widget:
+        size_hint_y:None
+        height:'10dp'
+    WhiteLabel:
+        text:'O tempo de estudos para cada matéria é bastante individual e vai depender das facilidades e dificuldades de cada um.\n\nEntretanto, existem algumas dicas que te ajudarão a entender quanto tempo dedicar para cada matéria e cada conteúdo.'    
+    Widget:
+        size_hint_y:None
+        height:'10dp'
+    WhiteLabel:
+        text:'1º: Observe todas as suas principais atividades;\n \n2º: monitore o seu tempo;\n\n3º: Estabeleça pequenas metas;\n\n4º: Estabeleça qual o melhor horário de estudos;\n\n5º: Estabeleça quantas horas por dia estudar;\n\n6º: Estabeleça seu método de estudo;\n\n7º: Faça exercícios que acalmem a mente'
+    
+
+
+<Contente@BoxLayout>:
+    orientation: 'vertical'
+    ScrollView:
+        MDList:
+            TwoLineAvatarIconListItem:
+                text: "Segunda-Feira"
+                secondary_text: "Clique para editar"
+                on_press:
+                    print('a')
+                IconRightWidget: 
+                    icon: 'playlist-edit'
+            TwoLineAvatarIconListItem:
+                text: "Terça-Feira"
+                secondary_text: "Clique para editar"
+                IconRightWidget: 
+                    icon: 'notebook'
+                    on_press:
+                        print('a')
+            TwoLineAvatarIconListItem:
+                text: "Quarta-Feira"
+                secondary_text: "Clique para editar"
+                IconRightWidget: 
+                    icon: 'notebook'
+                    on_press:
+                        print('a')
+            TwoLineAvatarIconListItem:
+                text: "Quinta-Feira"
+                secondary_text: "Clique para editar"
+                IconRightWidget: 
+                    icon: 'notebook'
+                    on_press:
+                        print('a')
+            TwoLineAvatarIconListItem:
+                text: "Sexta-Feira"
+                secondary_text: "Clique para editar"
+                IconRightWidget: 
+                    icon: 'notebook'
+                    on_press:
+                        print('a')
+            TwoLineAvatarIconListItem:
+                text: "Sabado"
+                secondary_text: "Clique para editar"
+                IconRightWidget: 
+                    icon: 'notebook'
+                    on_press:
+                        print('a')
+            TwoLineAvatarIconListItem:
+                text: "Domingo"
+                secondary_text: "Clique para editar"
+                IconRightWidget: 
+                    icon: 'notebook'
+                    on_press:
+                        print('a')
+        
+<Tradicional>:
+    name: 'cadastrotradicional'
+    MDToolbar:
+        id:toolbar
+        title: 'Tradicinal'
+        pos_hint: {'top':1}
+        elevation:10
+        left_action_items: [["reply",lambda x: app.root.transicao('cadastroplano','right')]]
+        right_action_items: [["alert-circle", lambda x: nav_drawer_right.set_state('open')]]
+    
+    BoxLayout:
+        orientation:'vertical' 
+        size_hint_y:None
+        height: root.height - toolbar.height
+        pos_hint: {'center_x':0.5}
+        
+        Contente:
+
+    
+
+    
+    
+    MDNavigationDrawer:
+        id: nav_drawer_right
+        anchor: 'right'
+        orientation:'vertical'
+        ScrollView:
+            ContenteNavigation:
+                
+               
