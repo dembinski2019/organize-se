@@ -43,59 +43,64 @@
     WhiteLabel:
         text:'1º: Observe todas as suas principais atividades;\n \n2º: monitore o seu tempo;\n\n3º: Estabeleça pequenas metas;\n\n4º: Estabeleça qual o melhor horário de estudos;\n\n5º: Estabeleça quantas horas por dia estudar;\n\n6º: Estabeleça seu método de estudo;\n\n7º: Faça exercícios que acalmem a mente'
     
+<Content>:
+    orientation:'vertical'
+    MDCard:
 
 
 <Contente@BoxLayout>:
     orientation: 'vertical'
+    
     ScrollView:
+
         MDList:
             TwoLineAvatarIconListItem:
                 text: "Segunda-Feira"
                 secondary_text: "Clique para editar"
                 on_press:
-                    print('a')
+                    app.root.get_screen('cadastrotradicional').selecionarmaterias()
                 IconRightWidget: 
                     icon: 'playlist-edit'
             TwoLineAvatarIconListItem:
                 text: "Terça-Feira"
                 secondary_text: "Clique para editar"
                 IconRightWidget: 
-                    icon: 'notebook'
+                    icon: 'playlist-edit'
                     on_press:
                         print('a')
             TwoLineAvatarIconListItem:
                 text: "Quarta-Feira"
                 secondary_text: "Clique para editar"
                 IconRightWidget: 
-                    icon: 'notebook'
+                    icon: 'playlist-edit'
                     on_press:
                         print('a')
             TwoLineAvatarIconListItem:
                 text: "Quinta-Feira"
                 secondary_text: "Clique para editar"
                 IconRightWidget: 
-                    icon: 'notebook'
+                    icon: 'playlist-edit'
                     on_press:
                         print('a')
             TwoLineAvatarIconListItem:
                 text: "Sexta-Feira"
                 secondary_text: "Clique para editar"
                 IconRightWidget: 
-                    icon: 'notebook'
+                    icon: 'playlist-edit'
                     on_press:
                         print('a')
             TwoLineAvatarIconListItem:
                 text: "Sabado"
                 secondary_text: "Clique para editar"
                 IconRightWidget: 
-                    icon: 'notebook'
+                    icon: 'playlist-edit'
                     on_press:
                         print('a')
             TwoLineAvatarIconListItem:
                 text: "Domingo"
                 secondary_text: "Clique para editar"
                 IconRightWidget: 
-                    icon: 'notebook'
+                    icon: 'playlist-edit'
                     on_press:
                         print('a')
         

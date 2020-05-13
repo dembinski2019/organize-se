@@ -1,7 +1,21 @@
 from kivy.uix.screenmanager import Screen
-from kivy.app import App
-from kivy.properties import ObjectProperty
+from kivymd.uix.dialog import MDDialog
+from kivy.uix.boxlayout import BoxLayout
+from kivymd.uix.button import MDFlatButton
 
+class Content(BoxLayout):
+    pass
 
 class Tradicional(Screen):
-    pass
+    def selecionarmaterias(self):
+        select = MDDialog(title = 'dialogo',
+        type="custom",
+        content_cls=Content(),
+        buttons = [MDFlatButton(
+                        text="CANCEL"
+                    )])
+        return select.open()
+
+
+
+
