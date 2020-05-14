@@ -11,40 +11,90 @@
             title: 'Plano de Estudos'
             pos_hint: {'top':1}
             elevation:10
-    
-        
+       
+        MDBoxLayout:
+            size_hint_y: None
+            height: self.minimum_height
+            md_bg_color:1,1,1,.1
+            padding: '30dp'
+            
+            BoxLayout:
+                orientation: 'vertical'
+                MDLabel:
+                    text:'Bem Vindo ao Organize-se'
+                    theme_text_color: "Primary"
+                MDSeparator:
+                    height: "1dp"
+                Widget:
+                    size_hint_y:None
+                    height:'10dp'
+                MDLabel:
+                    pos_hint: {'center_x':.5,'center_y':.5}
+                    text:'Selecione um modelo de gerenciamento de estudos'
+                    theme_text_color: "Secondary"
+            
+            AnchorLayout:
+                size_hint_x:None
+                height: self.minimum_width
+                anchor_x: "right"
+                size_hint_y: None
+                height: avatar.height
+
+                IconLeftWidget:
+                    id: avatar
+                    size_hint: None, None
+                    size: "64dp", "64dp"
+                    icon: "check-outline"
+                    text_color: .5,.3,.5,.5
+                    md_bg_color: .8, .1,.2,.8
+                
+            
+            
+                   
         BoxLayout:
             orientation:'vertical'
             id: container
             pos_hint: {'center_x':.5,'center_y':.5}
+            padding: '30dp'
             orientation: 'vertical'
-            
             spacing: '30dp'
             Widget:
 
             
-            MDFlatButton:
-                increment_width: container.width
-                height:container.height/7
-                font_size: "16sp"
-                md_bg_color: 1, 1, 1, 0.1
-                pos_hint: {'center_x':.5}
+            TwoLineAvatarIconListItem:
+                font_size: "18sp"
                 text: "Plano Tradicional"
+                secondary_text:'Dias e Horarios Fixos'
+                bold: True
                 on_press:app.root.transicao('cadastrotradicional','left')
-            MDFlatButton:
-                increment_width: container.width
-                font_size: "16sp"
-                md_bg_color: 1, 1, 1, 0.1
-                height: container.height/7
-                pos_hint: {'center_x':.5,'center_y':.5}
+                
+                IconLeftWidget:
+                    icon: "calendar"
+                    elevation_normal: 12
+                    text_color: .5,.3,.5,.5
+                    md_bg_color: .8, .1,.2,.8
+
+            TwoLineAvatarIconListItem:
+                font_size: "18sp"
+                bold: True
                 text: "Ciclos De Estudo"
-            MDFlatButton:
-                increment_width: container.width
-                height: container.height/7
-                font_size: "16sp"
-                md_bg_color: 1, 1, 1, 0.1
-                pos_hint: {'center_x':.5,'center_y':.5}
-                text: "Personalizar"
+                secondary_text:'Crie um ciclo de estudos'
+                
+                IconLeftWidget:
+                    icon: "img/grafico_home.png"
+                    elevation_normal: 12
+                    
+                    
+            TwoLineAvatarIconListItem:
+                font_size: "18sp"
+                bold: True
+                text: "Objetivo"
+                secondary_text:'Defina um Objetivo'
+                IconLeftWidget:
+                    icon: "target"
+                    elevation_normal: 12
+                    text_color: .5,.3,.5,.5
+                    md_bg_color: .8, .1,.2,.8
             Widget:
           
         
